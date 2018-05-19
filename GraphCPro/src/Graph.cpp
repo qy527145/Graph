@@ -44,13 +44,13 @@ Vex CGraph::GetVex(int nVex)
 
 int CGraph::FindEdge(int nVex, Edge sEdge[])
 {
-	int i = 0;
-	for (int j = 0; j < 20; j++)
+	int nCount = 0;
+	for (int i = 0; i < 20; i++)
 	{
-		if (m_Ljjz[nVex][j] > 0)
-			sEdge[i++] = { nVex,j,m_Ljjz[nVex][j] };
+		if (m_Ljjz[nVex][i] > 0)
+			sEdge[nCount++] = { nVex,i,m_Ljjz[nVex][i] };
 	}
-	return i;
+	return nCount;
 }
 
 void CGraph::DFS(int nVex, bool bVisited[], int & nIndex, int vexs[])
